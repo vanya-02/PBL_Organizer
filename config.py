@@ -1,0 +1,6 @@
+class Config:
+    FLASK_APP = 'app.py'
+    SECRET_KEY = 'f2008522fab3352b737224cad722b57a1d784ab0dd4cb9a63dfec4346a421792'
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///temp.db'
+    SQLALCHEMY_ECHO = False
