@@ -5,6 +5,8 @@ name: default
 steps:
 - name: test
   image: python
+  when:
+    branch: dev
   commands:
   - pip install -r requirements.txt
   - flask run
