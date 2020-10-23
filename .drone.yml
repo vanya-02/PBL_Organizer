@@ -10,7 +10,7 @@ steps:
       path: /root/.ssh
   settings:
     branch: master
-    remote: ssh://dokku@dokku.bitcore.nz/dorganizer
+    remote: ssh://dokku@dokku.bitcore.nz/dorganizer.bitcore.nz
     force: false
     commit: true
 
