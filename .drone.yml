@@ -1,12 +1,24 @@
 kind: pipeline
 type: docker
-name: default
+name: dorganize
 
 steps:
-- name: test
-  image: python
-  when:
-    branch: dev
-  commands:
-  - pip install -r requirements.txt
-  - flask run
+- name: dokku deploy
+  image: appleboy/drone-git-push
+  volumes:
+    - name: ssh
+      path: /root/.ssh
+  settings:
+    branch: master
+    remote: ssh://dokku@dokku.bitcore.nz/dorganizer
+    force: false
+    commit: true
+
+trigger:
+  branch:
+  - dev
+
+volumes:
+  - name: ssh
+    host:
+      path: /home/drone/.ssh
